@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import django.db.models.options as options
 from django.db import models
 from django.core.urlresolvers import reverse
 
@@ -12,6 +13,9 @@ class Post(models.Model):
   created = models.DateTimeField(auto_now_add=True)
 
   class Meta: # should be inside of your Model.
+    # Fix : TypeError: 'class Meta' got invalid attribute(s): get_absolute_url -> http://stackoverflow.com/questions/1088431/adding-attributes-into-django-models-meta-class    
+    options.DEFAULT_NAMES = options.DEFAULT_NAMES + ('get_absolute_url',)    
+    
     ordering = ['-created'] # ordered by 'created' in descending order. "-" means descending order
 
     # Note : 'Model' base provides automatically a __str__() implementation that calls __unicode__()
