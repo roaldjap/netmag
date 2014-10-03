@@ -3,12 +3,10 @@
 {% block title %} My Blog Archive {% endblock %}
 
 {% block content %}
-	{% for post in posts %}
 		<p>{{ post.title }}</p>
 		<p>{{ post.description }}</p>
 		<p>{{ post.content }}</p>
 		<p>{{ post.published }}</p>
 		<p>{{ post.created }}</p>
-	{% endfor %}
-
+		<p>{{ post.slug }}</p>
 {% endblock %}
