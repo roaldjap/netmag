@@ -23,5 +23,5 @@ class Post(models.Model):
     def __unicode__(self): # returns a unicode object - You'll normally use 
       return u'%s' % self.title
 
-    def get_absolute_url():
+    def get_absolute_url(self):
       return reverse('blog.views.post', args=[self.slug])

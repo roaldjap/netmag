@@ -6,11 +6,11 @@ def index(request):
   # get the blog posts that are published
   posts = Post.objects.filter(published=True)
   # now return the rendered template
-  return render(request, 'blog/index.html', {'posts':posts})
+  return render(request, 'blog/index.html', {'posts': posts })
 
 def post(request, slug):
   # get Post object
   post = get_object_or_404(Post, slug=slug);
   # now return he rendered template
-  return render(request, 'blog/post.html', {'post': post})
+  return render(request, 'blog/post.html', {'post': post })
   

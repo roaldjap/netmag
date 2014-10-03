@@ -1,8 +1,6 @@
 import os
 import django
 # http://www.morethanseven.net/2009/02/11/django-settings-tip-setting-relative-paths/
-DJANGO_ROOT = os.path.dirname(os.path.realpath(django.__file__))
-SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 
 # Django settings for netmag project.
 
@@ -55,7 +53,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = os.path.join(SITE_ROOT, 'assets')
+MEDIA_ROOT = ['netmag/media/']
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -112,9 +110,7 @@ ROOT_URLCONF = 'netmag.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'netmag.wsgi.application'
 
-TEMPLATE_DIRS = (
-    os.path.join(SITE_ROOT, 'templates')
-)
+TEMPLATE_DIRS = ['netmag/templates']
 
 INSTALLED_APPS = (
     'django.contrib.auth',
