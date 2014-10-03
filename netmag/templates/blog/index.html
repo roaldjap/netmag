@@ -4,11 +4,11 @@
 
 {% block content %}
 	{% for post in posts %}
-		<p>{{ post.title }}</p>
+		<h1>{{ post.title }}</h1>
 		<p>{{ post.description }}</p>
 		<p>{{ post.content }}</p>
-		<p>{{ post.published }}</p>
-		<p>{{ post.created }}</p>
+		<p>{{ post.get_absolute_url }}</p>
+		<hr>
 	{% endfor %}
 
 {% endblock %}
