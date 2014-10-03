@@ -14,7 +14,7 @@ class Post(models.Model):
 
   class Meta: # should be inside of your Model.
     # Fix : TypeError: 'class Meta' got invalid attribute(s): get_absolute_url -> http://stackoverflow.com/questions/1088431/adding-attributes-into-django-models-meta-class    
-    options.DEFAULT_NAMES = options.DEFAULT_NAMES + ('get_absolute_url',)    
+    # options.DEFAULT_NAMES = options.DEFAULT_NAMES + ('get_absolute_url',)    
     
     ordering = ['-created'] # ordered by 'created' in descending order. "-" means descending order
 
